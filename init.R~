@@ -1,0 +1,39 @@
+library(devtools)
+load_all("~/Rpackages/bibliographica")
+load_all("~/Rpackages/estc")
+
+library(ggplot2)
+library(devtools)
+library(tidyr)
+library(dplyr)
+library(stringr)
+library(bibliographica)
+library(estc)
+library(magrittr)
+library(sorvi)
+library(reshape2)
+library(gridExtra)
+library(knitr)
+library(magrittr)
+
+catalog <- "estc"
+field <- "physical_dimension"
+
+# Data folder
+private_data_folder <- "estc-data-private/"
+
+# Input
+parsed_csv <- paste0(private_data_folder, "estc-csv-raw/estc_parsed.csv.gz")
+parsed_rds <- paste0(private_data_folder, "estc-csv-raw/parsed.Rds")
+
+# Output
+polish_folder <- paste0(private_data_folder, "estc-physicaldimension/")
+polished_file <- paste0(polish_folder, field, ".Rds")
+polished_csv <- paste0(polish_folder, field, ".csv")
+
+# Load initial CSVs (time consuming, hence load Rds instead, if available)
+df.orig <- load_initial_datafile(parsed_csv, output.file = parsed_rds, reload.data = FALSE)
+
+# Test with small data test set
+df.orig <- df.orig[sample(1:nrow(df.orig), 1e4),] # random 
+
