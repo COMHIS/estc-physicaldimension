@@ -17,8 +17,8 @@ The fields used are:
 
 ### Input data preparation steps
 
-No particular preparations. Reads in the raw MARC data entries, and
-cleans them up.
+No particular preparations. Reads in the raw MARC data entries (from
+parsed CSV), and harmonizes them.
 
 
 
@@ -27,12 +27,23 @@ cleans them up.
 > TBD
 
 
+
 ## Data processing
 
 Run the script [main.R](main.R) to convert the raw MARC data into the final
 table of document dimensions.
 
-Further details will be added.
+This will read in the data, harmonize the data, and finally write
+summary files.
+
+
+### Output
+
+ * [Data](estc-data-private/estc-physicaldimension/) (multiple formats
+   such as CSV/Rds may be generated but their contents are identical)
+
+ * [Summary file](output.tables/physical_dimension.md). This includes
+   links to further auxiliary files (figures, CSV tables)
 
 
 ### UML Overview
