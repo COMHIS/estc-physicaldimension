@@ -31,7 +31,7 @@ data, harmonize the data, and finally write summary files.
 [Summary file](physical_dimension.md) provides an overview of the harmonized data, and includes links to further
 auxiliary files (figures, CSV tables)
 
-The output data tables are available and described in ```r paste0(global_outpath, "/README.md")```.
+The output data tables are available and described in [COMHIS/estc-data-private](https://github.com/COMHIS/estc-data-private/tree/master/estc-physicaldimension).
 
 
 ## Software version
