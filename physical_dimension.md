@@ -9,7 +9,7 @@ output: markdown_document
 
 ## Document size comparisons
 
-  * Some dimension info is provided in the original raw data for altogether 478478 documents (4.78478 &times; 10<sup>7</sup>%) but could not be interpreted for NA documents (ie. dimension info was successfully estimated for NA % of the documents where this field was not empty).
+  * Some dimension info is provided in the original raw data for altogether 478478 documents (99%) but could not be interpreted for 9070 documents (ie. dimension info was successfully estimated for 98.1 % of the documents where this field was not empty).
 
   * Document size (area) info was obtained in the final preprocessed data for altogether 472128 documents (98%). For the remaining documents, critical dimension information was not available or could not be interpreted: [List of entries where document surface could not be estimated](physical_dimension_incomplete.csv)
 
@@ -41,25 +41,26 @@ The estimated dimensions are based on the following auxiliary information sheets
 
 Left: final gatherings vs. final document dimension (width x height). Right: original gatherings versus original heights where both are available. The point size indicates the number of documents for each case. The red dots indicate the estimated height that is used when only gathering information is available. 
 
-<img src="output.tables/figure/summary-1.png" title="plot of chunk summary" alt="plot of chunk summary" width="280px" /><img src="output.tables/figure/summary-2.png" title="plot of chunk summary" alt="plot of chunk summary" width="280px" />
+<img src="output.tables/figure/summary-1.png" title="plot of chunk summary" alt="plot of chunk summary" width="420px" /><img src="output.tables/figure/summary-2.png" title="plot of chunk summary" alt="plot of chunk summary" width="420px" />
 
 
 Left: Document dimension histogram (surface area);
 Right: title count per gatherings.
 
-<img src="output.tables/figure/sizes-1.png" title="plot of chunk sizes" alt="plot of chunk sizes" width="280px" /><img src="output.tables/figure/sizes-2.png" title="plot of chunk sizes" alt="plot of chunk sizes" width="280px" />
+<img src="output.tables/figure/sizes-1.png" title="plot of chunk sizes" alt="plot of chunk sizes" width="420px" /><img src="output.tables/figure/sizes-2.png" title="plot of chunk sizes" alt="plot of chunk sizes" width="420px" />
 
 ### Gatherings timelines
 
 
 
-
-Popularity of different document sizes over time. Left: absolute title counts. Right: relative title counts. Gatherings with less than 15 documents at every decade are excluded:
+Popularity of different document sizes over time. Left: absolute title
+counts. Right: relative title counts. Gatherings with less than `r
+nmin` documents at every decade are excluded:
 
 
 
 ```
-## Error in `$<-.data.frame`(`*tmp*`, publication_time, value = numeric(0)): replacement has 0 rows, data has 469408
+## Error in `$<-.data.frame`(`*tmp*`, "publication_time", value = numeric(0)): replacement has 0 rows, data has 469408
 ```
 
 ```

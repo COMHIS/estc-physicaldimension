@@ -5,6 +5,8 @@ This repository is part of the ESTC data unification project by Helsinki Computa
 It provides code for processing the physical_dimension (gatherings / book formats) information found in the English Short Title Catalogue (ESTC) and outputs unified and unique data for the ESTC documents.
 
 
+
+
 ## Input
 
 ### ESTC
@@ -21,6 +23,7 @@ Run the script [main.R](main.R) to convert the raw MARC data into the
 final table of harmonized document dimensions. This will read in the
 data, harmonize the data, and finally write summary files.
 
+**Running time** is just a few minutes on a normal laptop.
 
 
 ## Output
