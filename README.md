@@ -7,7 +7,7 @@ It provides code for processing the physical_dimension (gatherings / book format
 
 ## Input
 
-#### ESTC input
+### ESTC
 
 The main input is the [parsed MARC data](https://github.com/COMHIS/estc-data-private/blob/master/estc-csv-raw/estc_parsed.csv.gz).
 
@@ -15,55 +15,28 @@ The fields used are:
 * physical_dimension
 
 
-### Input data preparation steps
-
-No particular preparations. Reads in the raw MARC data entries (from
-parsed CSV), and harmonizes them.
-
-
-
-### Input UML
-
-> TBD
-
-
-
 ## Data processing
 
-Run the script [main.R](main.R) to convert the raw MARC data into the final
-table of document dimensions.
+Run the script [main.R](main.R) to convert the raw MARC data into the
+final table of harmonized document dimensions. This will read in the
+data, harmonize the data, and finally write summary files.
 
-This will read in the data, harmonize the data, and finally write
-summary files.
-
-
-### Output
-
- * [Data](estc-data-private/estc-physicaldimension/) (multiple formats
-   such as CSV/Rds may be generated but their contents are identical)
-
- * [Summary file](output.tables/physical_dimension.md). This includes
-   links to further auxiliary files (figures, CSV tables)
-
-
-### UML Overview
-
-> TBD
 
 
 ## Output
 
-The output are in the directory specied in the `global_outpath` variable set in `init.R`.
-
-The polished dimension field is stored in that directory in the following variables set in `init.R`:
-
-- polished_rds (Rds)
-- polished_csv (CSV)
+[Summary file](physical_dimension.md) provides an
+overview of the harmonized data, and includes links to further
+auxiliary files (figures, CSV tables)
 
 
-### Final output csv
+The [output data files](estc-data-private/estc-physicaldimension/) are in ``estc-data-private/estc-physicaldimension/`` in Rds and CSV formats:
 
-The fields of the final output csv/rds are as follows:
+- ``estc-data-private/estc-physicaldimension/physical_dimension.Rds`` (Rds)
+- ``estc-data-private/estc-physicaldimension/physical_dimension.csv`` (CSV)
+
+
+The data has the following output fields:
 
 * **gatherings.original** - Gatherings in the original entry
 * **width.original** - Width in the original entry
@@ -75,18 +48,54 @@ The fields of the final output csv/rds are as follows:
 * **obl** - Obl: original and estimated (when missing from original entry)
 * **area** - Area: estimated document area (height x width) 
 
-Latest version of the final output table is at [ESTC private data repository](https://github.com/COMHIS/estc-data-private/tree/master/estc-physicaldimensions/physical_dimension.csv).
-
-
-## Automated summaries
-
-The output are in the directory specied in `output.folder`.
-
-The conversions are summarized in: [physical_dimension.md](https://github.com/COMHIS/estc-physicaldimension/tree/master/physical_dimension.md).
-
 
 ## Software version
 
-```{r}
+
+```r
 R.Version()
+```
+
+```
+## $platform
+## [1] "x86_64-pc-linux-gnu"
+## 
+## $arch
+## [1] "x86_64"
+## 
+## $os
+## [1] "linux-gnu"
+## 
+## $system
+## [1] "x86_64, linux-gnu"
+## 
+## $status
+## [1] ""
+## 
+## $major
+## [1] "3"
+## 
+## $minor
+## [1] "5.1"
+## 
+## $year
+## [1] "2018"
+## 
+## $month
+## [1] "07"
+## 
+## $day
+## [1] "02"
+## 
+## $`svn rev`
+## [1] "74947"
+## 
+## $language
+## [1] "R"
+## 
+## $version.string
+## [1] "R version 3.5.1 (2018-07-02)"
+## 
+## $nickname
+## [1] "Feather Spray"
 ```

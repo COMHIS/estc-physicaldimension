@@ -1,7 +1,7 @@
 ---
 title: "Document dimension preprocessing summary"
 author: "Helsinki Computational History Group (COMHIS)"
-date: "2018-10-06"
+date: "2018-10-07"
 output: markdown_document
 ---
 

@@ -8,7 +8,8 @@ df <- df.preprocessed
 id <- field
 f <- knit(input = system.file(paste("extdata/", field, ".Rmd", sep = ""),
   	       	package = "bibliographica"),
-                output = paste(output.folder, "/", id, ".md", sep = "")) 
+                output = paste(id, ".md", sep = ""))
+                #output = paste(output.folder, "/", id, ".md", sep = "")) 		
 
 # ---------------------------------------------------------
 
