@@ -49,6 +49,10 @@ Right: title count per gatherings.
 
 <img src="output.tables/figure/sizes-1.png" title="plot of chunk sizes" alt="plot of chunk sizes" width="420px" /><img src="output.tables/figure/sizes-2.png" title="plot of chunk sizes" alt="plot of chunk sizes" width="420px" />
 
+
+
+<!--
+
 ### Gatherings timelines
 
 
@@ -58,7 +62,6 @@ counts. Right: relative title counts. Gatherings with less than `r
 nmin` documents at every decade are excluded:
 
 
-
 ```
 ## Error in `$<-.data.frame`(`*tmp*`, "publication_time", value = numeric(0)): replacement has 0 rows, data has 469408
 ```
@@ -74,11 +77,6 @@ nmin` documents at every decade are excluded:
 ```
 ## Error in print(res$plot): object 'res' not found
 ```
-
-
-
-
-<!--
 
 
 ## Average document dimensions 
