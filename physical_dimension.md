@@ -63,7 +63,7 @@ nmin` documents at every decade are excluded:
 
 
 ```
-## Error in `$<-.data.frame`(`*tmp*`, "publication_time", value = numeric(0)): replacement has 0 rows, data has 469408
+## Error in `$<-.data.frame`(`*tmp*`, publication_time, value = numeric(0)): replacement has 0 rows, data has 469408
 ```
 
 ```

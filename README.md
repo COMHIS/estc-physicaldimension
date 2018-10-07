@@ -5,6 +5,8 @@ This repository is part of the ESTC data unification project by Helsinki Computa
 It provides code for processing the physical_dimension (gatherings / book formats) information found in the English Short Title Catalogue (ESTC) and outputs unified and unique data for the ESTC documents.
 
 
+
+
 ## Input
 
 ### ESTC
@@ -21,32 +23,15 @@ Run the script [main.R](main.R) to convert the raw MARC data into the
 final table of harmonized document dimensions. This will read in the
 data, harmonize the data, and finally write summary files.
 
+**Running time** is just a few minutes on a normal laptop.
 
 
 ## Output
 
-[Summary file](physical_dimension.md) provides an
-overview of the harmonized data, and includes links to further
+[Summary file](physical_dimension.md) provides an overview of the harmonized data, and includes links to further
 auxiliary files (figures, CSV tables)
 
-
-The [output data files](estc-data-private/estc-physicaldimension/) are in ``estc-data-private/estc-physicaldimension/`` in Rds and CSV formats:
-
-- ``estc-data-private/estc-physicaldimension/physical_dimension.Rds`` (Rds)
-- ``estc-data-private/estc-physicaldimension/physical_dimension.csv`` (CSV)
-
-
-The data has the following output fields:
-
-* **gatherings.original** - Gatherings in the original entry
-* **width.original** - Width in the original entry
-* **height.original** - Height in the original entry
-* **obl.original** - Obl. in the original entry (horizontally printed document)
-* **gatherings** - Gatherings: original and estimated (when missing from original entry)
-* **width** - Width: original and estimated (when missing from original entry)
-* **height** - Height: original and estimated (when missing from original entry)
-* **obl** - Obl: original and estimated (when missing from original entry)
-* **area** - Area: estimated document area (height x width) 
+The output data tables are available and described in ``estc-data-private/estc-physicaldimension//README.md``.
 
 
 ## Software version
