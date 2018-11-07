@@ -1,11 +1,16 @@
 # Fill in missing entries where estimates can be obtained:
 # area, width, height, gatherings
 # (also keep pure originals before fill in)
+
 df.tmp <- polish_dimensions(df.orig$value, fill = FALSE, verbose = TRUE)
 
 # Enrich dimensions before pagecount (some dimensions reclassified)
 df.preprocessed <- enrich_dimensions(df.tmp)
 df.preprocessed$system_control_number <- df.orig$system_control_number 
+
+# Add the entry IDs
+ids <- df.orig[, c("control_number", "system_control_number")]
+df.preprocessed <- cbind(ids, df.preprocessed)
 
 print("Saving updates on preprocessed data")
 # CSV format
