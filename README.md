@@ -9,16 +9,13 @@ It provides code for processing the physical_dimension (gatherings / book format
 
 #### ESTC input
 
-The main input is the [parsed MARC data](https://github.com/COMHIS/estc-data-private/blob/master/estc-csv-raw/estc_parsed.csv.gz).
-
-The fields used are:
-* physical_dimension
+The main input is the [parsed and prefiltered MARC data](https://github.com/COMHIS/estc-data-verified/blob/master/estc-csv-raw-filtered/estc_raw_sane.csv).
 
 
 ### Input data preparation steps
 
-No particular preparations. Reads in the raw MARC data entries, and
-cleans them up.
+
+The [ESTC field picker](https://github.com/COMHIS/estc-raw-csv-prepicker) is used to pick the field 300a (physical dimension) separately. The folder [pick_300a](pick_300a) contains the Python scripts that were used in the estc-raw-csv-prepicker folder to generate the parsed data file fields_picked_300a.csv
 
 
 

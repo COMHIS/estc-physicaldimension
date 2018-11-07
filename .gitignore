@@ -1,0 +1,6 @@
+pick_300a*
+estc-data-*
+estc-raw-*
+*.Rds
+fields_picked_300c.csv
+*~
