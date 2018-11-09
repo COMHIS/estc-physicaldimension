@@ -32,6 +32,13 @@ polished_csv <- paste0(global_outpath, field, ".csv")
 
 # Load initial CSVs (time consuming, hence load Rds instead, if available)
 df.orig <- read_parsed_fields(parsed_csv, field = 300, subfield = "c")
+
+# Manually discard invalid dimension entries
+# that lead to the few duplicates (n=11)
+x <- subset(df.orig, Record_seq %in% df.orig[duplicated(df.orig$Record_seq), 1])
+print(head(x[, 1:2]))
+stop("INVESTIGATE")
+
 # Problem; system_control_number not unique?
 #df.orig <- read_parsed_fields(parsed_csv, field = 300, subfield = "c", n = 1e3)
 
