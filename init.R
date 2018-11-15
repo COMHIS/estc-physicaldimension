@@ -23,7 +23,7 @@ field <- "physical_dimension"
 private_data_folder <- "./"
 
 # Input
-parsed_csv <- "fields_picked_300c.csv"
+parsed_csv <- "estc-raw-csv-prepicker/out/fields_picked_300c.csv"
 
 # Output
 private_data_folder <- "estc-data-unified/"
@@ -36,9 +36,15 @@ df.orig <- read_parsed_fields(parsed_csv, field = 300, subfield = "c")
 # Manually discard invalid dimension entries
 # that lead to the few duplicates (n=11)
 x <- subset(df.orig, Record_seq %in% df.orig[duplicated(df.orig$Record_seq), 1])
-print(head(x[, 1:2]))
-stop("INVESTIGATE")
 
+
+
+x <- df.orig %>% select(Record_seq, system_control_number) %>% unique()
+spl <- split(x$system_control_number, x$Record_seq)
+if (any(sapply(spl, length)>1)) {
+  stop("Duplicated Record_seq vs 035a")
+  print(spl[which(sapply(spl, length)>1)])
+}
 # Problem; system_control_number not unique?
 #df.orig <- read_parsed_fields(parsed_csv, field = 300, subfield = "c", n = 1e3)
 

@@ -6,18 +6,31 @@ It provides code for processing the physical_dimension (gatherings / book format
 
 
 
+### Running the workflow
+
+- Update the required data folders from Git:
+  - estc-csv-raw-filtered)
+  - estc-data-unified
+  - estc-data-verified
+  
+- Rerun python fieldpicker_main.py in estc-raw-csv-prepicker
+  repository branch antagomir-physicaldimension. This picks up the
+  relevant fields from the original full data.
+
+- Run main.R in order to read the raw data and carry out harmonization.
+
 
 ## Input
+
 
 ### ESTC
 
 The main input is the [parsed and prefiltered MARC data](https://github.com/COMHIS/estc-data-verified/blob/master/estc-csv-raw-filtered/estc_raw_sane.csv).
 
-
 ### Input data preparation steps
 
 
-The [ESTC field picker](https://github.com/COMHIS/estc-raw-csv-prepicker) is used to pick the field 300a (physical dimension) separately. The folder [pick_300a](pick_300a) contains the Python scripts that were used in the estc-raw-csv-prepicker folder to generate the parsed data file fields_picked_300a.csv
+The [ESTC field picker](https://github.com/COMHIS/estc-raw-csv-prepicker) is used to pick the field 300a (physical dimension) separately. The branch antagomir-physicaldimension contains the Python scripts that were used to generate the parsed data file out/fields_picked_300a.csv Run "python3 fieldpicker_main.py" and check that file paths are ok.
 
 ## Data processing
 
