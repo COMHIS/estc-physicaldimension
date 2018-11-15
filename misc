@@ -1,1 +1,14 @@
+x <- subset(df.orig, (Record_seq %in% ids$record_seq) & (system_control_number %in% ids$curives) ) %>% unique()
+spl <- split(x$system_control_number, x$Record_seq)
+if (any(sapply(spl, length)>1)) {
+  stop("Duplicated Record_seq vs 035a")
+  print(spl[which(sapply(spl, length)>1)])
+}
+
+spl <- split(ids$curives, ids$record_seq)
+spl[which(sapply(spl, length)>1)]
+
+# Problem; system_control_number not unique?
+#df.orig <- read_parsed_fields(parsed_csv, field = 300, subfield = "c", n = 1e3)
+
 today.str <- as.character(Sys.Date())

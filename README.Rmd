@@ -5,20 +5,21 @@ This repository is part of the ESTC data unification project by Helsinki Computa
 It provides code for processing the physical_dimension (gatherings / book formats) information found in the English Short Title Catalogue (ESTC) and outputs unified and unique data for the ESTC documents.
 
 
-
 ### Running the workflow
 
-- Update the required data folders from Git:
-  - estc-csv-raw-filtered)
+Update the required data folders from Git:
   - estc-data-unified
   - estc-data-verified
   
-- Rerun python fieldpicker_main.py in estc-raw-csv-prepicker
+Rerun python fieldpicker_main.py in estc-raw-csv-prepicker
   repository branch antagomir-physicaldimension. This picks up the
   relevant fields from the original full data.
 
-- Run main.R in order to read the raw data and carry out harmonization.
+Run main.R in order to read the raw data and carry out harmonization.
 
+Push the changes in
+- this working repo
+- data repo estc-data-unified/estc-physicaldimension/
 
 ## Input
 

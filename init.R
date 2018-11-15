@@ -33,20 +33,26 @@ polished_csv <- paste0(global_outpath, field, ".csv")
 # Load initial CSVs (time consuming, hence load Rds instead, if available)
 df.orig <- read_parsed_fields(parsed_csv, field = 300, subfield = "c")
 
-# Manually discard invalid dimension entries
-# that lead to the few duplicates (n=11)
-x <- subset(df.orig, Record_seq %in% df.orig[duplicated(df.orig$Record_seq), 1])
+# Only pick the sane entries
+ids <- read.csv("estc-data-verified/estc-csv-raw-filtered/record_id_curives_pairs.csv", header = TRUE)
+ids <- subset(ids, category == "sane") %>% unique()
+df.orig <- subset(df.orig, Record_seq %in% ids$record_seq)
+# record_id_curives_pairs %>% filter(category=="sane") %>% inner_join(estc_raw_sane,by=c("Record_seq"=="record_seq"))
 
-
-
-x <- df.orig %>% select(Record_seq, system_control_number) %>% unique()
-spl <- split(x$system_control_number, x$Record_seq)
-if (any(sapply(spl, length)>1)) {
-  stop("Duplicated Record_seq vs 035a")
-  print(spl[which(sapply(spl, length)>1)])
-}
-# Problem; system_control_number not unique?
-#df.orig <- read_parsed_fields(parsed_csv, field = 300, subfield = "c", n = 1e3)
+# There are a few cases where a document has multiple dimension entries
+# subset(df.orig, system_control_number %in% n)
+# 72701       (CU-RivES)P2224                     12⁰.
+# 72701       (CU-RivES)P2224              11 x 15 cm.
+# Combine these manually by semicolon
+n <- df.orig$system_control_number[which(duplicated(df.orig$system_control_number))]
+s <- subset(df.orig, system_control_number %in% n)
+f <- sapply(split(s$value, s$system_control_number), function (x) {paste(unlist(x), collapse = "; ")})
+inds <- match(names(f), df.orig$system_control_number)
+# Replace the first value of the duplicate document with the new merged version
+df.orig[inds, "value"] <- f
+# Remove the remaining duplicates after mering
+inds2 <- setdiff(which(df.orig$system_control_number %in% names(f)), inds)
+df.orig <- df.orig[-inds2,]
 
 # Test with small data test set
 # df.orig <- df.orig[sample(1:nrow(df.orig), 1e4),] # random 
