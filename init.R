@@ -19,9 +19,6 @@ library(magrittr)
 catalog <- "estc"
 field <- "physical_dimension"
 
-# Data folder
-private_data_folder <- "./"
-
 # Input
 parsed_csv <- "estc-raw-csv-prepicker/out/fields_picked_300c.csv"
 
