@@ -1,7 +1,7 @@
 ---
 title: "Document dimension preprocessing summary"
 author: "Helsinki Computational History Group (COMHIS)"
-date: "2018-11-16"
+date: "2020-01-22"
 output: markdown_document
 ---
 
@@ -9,15 +9,15 @@ output: markdown_document
 
 ## Document size comparisons
 
-  * Some dimension info is provided in the original raw data for altogether 382181 documents (99.5%) but could not be interpreted for 8954 documents (ie. dimension info was successfully estimated for 97.7 % of the documents where this field was not empty).
+  * Some dimension info is provided in the original raw data for altogether 476738 documents (99%) but could not be interpreted for 9054 documents (ie. dimension info was successfully estimated for 98.1 % of the documents where this field was not empty).
 
-  * Document size (area) info was obtained in the final preprocessed data for altogether 375942 documents (98%). For the remaining documents, critical dimension information was not available or could not be interpreted: [List of entries where document surface could not be estimated](physical_dimension_incomplete.csv)
+  * Document size (area) info was obtained in the final preprocessed data for altogether 470401 documents (98%). For the remaining documents, critical dimension information was not available or could not be interpreted: [List of entries where document surface could not be estimated](physical_dimension_incomplete.csv)
 
-  * Document gatherings info is originally available for 369704 documents (96%), and further estimated up to 373227 documents (97%) in the final preprocessed data.
+  * Document gatherings info is originally available for 464160 documents (96%), and further estimated up to 467684 documents (97%) in the final preprocessed data.
 
-  * Document height info is originally available for 8034 documents (2%), and further estimated up to 375942 documents (98%) in the final preprocessed data.
+  * Document height info is originally available for 8433 documents (2%), and further estimated up to 470401 documents (98%) in the final preprocessed data.
 
-  * Document width info is originally available for 3762 documents (1%), and further estimated up to 375942 documents (98%) in the final preprocessed data.
+  * Document width info is originally available for 3799 documents (1%), and further estimated up to 470401 documents (98%) in the final preprocessed data.
 
 
 These tables can be used to verify the accuracy of the conversions from the raw data to final estimates:
@@ -63,7 +63,7 @@ nmin` documents at every decade are excluded:
 
 
 ```
-## Error in `$<-.data.frame`(`*tmp*`, publication_time, value = numeric(0)): replacement has 0 rows, data has 373227
+## Error in `$<-.data.frame`(`*tmp*`, publication_time, value = numeric(0)): replacement has 0 rows, data has 467684
 ```
 
 ```
@@ -71,7 +71,7 @@ nmin` documents at every decade are excluded:
 ```
 
 ```
-## Error in `$<-.data.frame`(`*tmp*`, "publication_time", value = numeric(0)): replacement has 0 rows, data has 373227
+## Error in `$<-.data.frame`(`*tmp*`, "publication_time", value = numeric(0)): replacement has 0 rows, data has 467684
 ```
 
 ```
@@ -89,7 +89,7 @@ Here we use the original data only:
 ```
 
 ```
-## Error in grouped_df_impl(data, unname(vars), drop): Column `publication_decade` is unknown
+## Error: Column `publication_decade` is unknown
 ```
 
 ```
@@ -106,10 +106,12 @@ Only the most frequently occurring gatherings are listed here:
 
 |gatherings.original | mean.width| median.width| mean.height| median.height|   n|
 |:-------------------|----------:|------------:|-----------:|-------------:|---:|
-|1to                 |      28.81|        28.81|       41.17|         41.17|  18|
-|2fo                 |      20.28|        20.28|       37.51|         37.51| 598|
-|4to                 |      18.43|        18.43|       21.31|         21.31| 427|
-|8vo                 |      16.50|        16.50|       19.51|         19.51| 633|
-|12mo                |      11.50|        11.50|       15.69|         15.69| 104|
+|1to                 |      29.06|        29.06|       41.97|         41.97|  29|
+|2fo                 |      22.35|        22.35|       36.93|         36.93| 828|
+|4to                 |      19.17|        19.17|       21.79|         21.79| 522|
+|8vo                 |      16.50|        16.50|       19.24|         19.24| 679|
+|12mo                |      11.50|        11.50|       15.57|         15.57| 109|
+|16mo                |      11.00|        11.00|       11.04|         11.04|  23|
+|18mo                |      10.00|        10.00|       11.40|         11.40|   5|
 
 -->

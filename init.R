@@ -10,7 +10,7 @@ library(stringr)
 library(bibliographica)
 library(estc)
 library(magrittr)
-library(sorvi)
+#library(sorvi)
 library(reshape2)
 library(gridExtra)
 library(knitr)
@@ -29,6 +29,7 @@ polished_csv <- paste0(global_outpath, field, ".csv")
 
 # Load initial CSVs (time consuming, hence load Rds instead, if available)
 df.orig <- read_parsed_fields(parsed_csv, field = 300, subfield = "c")
+names(df.orig) <- gsub("300c", "value", names(df.orig))
 
 # Only pick the sane entries
 ids <- read.csv("estc-data-verified/estc-csv-raw-filtered/record_id_curives_pairs.csv", header = TRUE)

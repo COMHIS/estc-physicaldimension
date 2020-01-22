@@ -7,10 +7,9 @@ Helsinki Computational History Group
 
 ## Output
 
-The workflow provides code for processing the physical dimension
+The workflow provides code and outcomes for processing the physical dimension
 (gatherings / book formats) information found in the English Short
-Title Catalogue (ESTC) and outputs unified and unique data for the
-ESTC documents.
+Title Catalogue (ESTC).
 
  - [Automated summaries](physical_dimension.md): overview of harmonization and links to supporting data
  - [Output data tables](https://github.com/COMHIS/estc-data-unified/tree/master/estc-physicaldimension).
@@ -72,26 +71,26 @@ R.Version()
 ## [1] "3"
 ## 
 ## $minor
-## [1] "5.1"
+## [1] "6.1"
 ## 
 ## $year
-## [1] "2018"
+## [1] "2019"
 ## 
 ## $month
 ## [1] "07"
 ## 
 ## $day
-## [1] "02"
+## [1] "05"
 ## 
 ## $`svn rev`
-## [1] "74947"
+## [1] "76782"
 ## 
 ## $language
 ## [1] "R"
 ## 
 ## $version.string
-## [1] "R version 3.5.1 (2018-07-02)"
+## [1] "R version 3.6.1 (2019-07-05)"
 ## 
 ## $nickname
-## [1] "Feather Spray"
+## [1] "Action of the Toes"
 ```
