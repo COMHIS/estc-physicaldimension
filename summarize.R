@@ -18,7 +18,11 @@ write.table(tab, file = paste0(output.folder, "conversions_physical_dimension.cs
 inds <- which(is.na(df.preprocessed[["area"]]))
 x <- cbind(original = as.character(df.orig$value)[inds],
           df.preprocessed[inds, c("gatherings", "width", "height", "obl")])
-tmp <- write.table(x,
+
+# Prepare printable table
+xout <- x %>% group_by(original, gatherings, width, height, obl) %>% tally() %>% arrange(desc(n))
+
+tmp <- write.table(xout,
     paste(output.folder, paste("physical_dimension_incomplete.csv", sep = "_"), sep = ""),
     sep = "\t", quote = FALSE, row.names = FALSE)
 
