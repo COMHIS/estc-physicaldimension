@@ -11,7 +11,7 @@ output: markdown_document
 
   * Some dimension info is provided in the original raw data for altogether 476738 documents (99%) but could not be interpreted for 9054 documents (ie. dimension info was successfully estimated for 98.1 % of the documents where this field was not empty).
 
-  * Document size (area) info was obtained in the final preprocessed data for altogether 470401 documents (98%). For the remaining documents, critical dimension information was not available or could not be interpreted: [List of entries where document surface could not be estimated](physical_dimension_incomplete.csv)
+  * Document size (area) info was obtained in the final preprocessed data for altogether 470401 documents (98%). For the remaining documents, critical dimension information was not available or could not be interpreted: [List of entries where document surface could not be estimated](output.tables/physical_dimension_incomplete.csv)
 
   * Document gatherings info is originally available for 464160 documents (96%), and further estimated up to 467684 documents (97%) in the final preprocessed data.
 
@@ -22,7 +22,7 @@ output: markdown_document
 
 These tables can be used to verify the accuracy of the conversions from the raw data to final estimates:
 
-  * [Dimension conversions from raw data to final estimates](conversions_physical_dimension.csv)
+  * [Dimension conversions from raw data to final estimates](output.tables/conversions_physical_dimension.csv)
 
   * [Automated tests for dimension conversions](https://github.com/COMHIS/bibliographica/blob/master/inst/extdata/tests_dimension_polish.csv)
 
@@ -63,7 +63,7 @@ nmin` documents at every decade are excluded:
 
 
 ```
-## Error in `$<-.data.frame`(`*tmp*`, publication_time, value = numeric(0)): replacement has 0 rows, data has 467684
+## Error in `$<-.data.frame`(`*tmp*`, "publication_time", value = numeric(0)): replacement has 0 rows, data has 467684
 ```
 
 ```
