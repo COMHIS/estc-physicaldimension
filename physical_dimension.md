@@ -1,7 +1,7 @@
 ---
 title: "Document dimension preprocessing summary"
 author: "Helsinki Computational History Group (COMHIS)"
-date: "2020-01-22"
+date: "2020-02-07"
 output: markdown_document
 ---
 
@@ -85,7 +85,8 @@ Here we use the original data only:
 
 
 ```
-## Error in .f(.x[[i]], ...): object 'publication_decade' not found
+## Error: Can't subset columns that don't exist.
+## [31m✖[39m The column `publication_decade` doesn't exist.
 ```
 
 ```
