@@ -1,6 +1,6 @@
 library(devtools)
-load_all("~/Rpackages/bibliographica")
-load_all("~/Rpackages/estc")
+load_all("bibliographica")
+load_all("estc")
 
 library(ggplot2)
 library(devtools)
@@ -32,7 +32,7 @@ df.orig <- read_parsed_fields(parsed_csv, field = 300, subfield = "c")
 names(df.orig) <- gsub("300c", "value", names(df.orig))
 
 # Only pick the sane entries
-ids <- read.csv("estc-data-verified/estc-csv-raw-filtered/record_id_curives_pairs.csv", header = TRUE)
+ids <- read.csv("estc-data-verified/estc-csv-raw-filtered/record_seq_estc_id_pairs.csv", header = TRUE)
 ids <- subset(ids, category == "sane") %>% unique()
 df.orig <- subset(df.orig, Record_seq %in% ids$record_seq)
 # record_id_curives_pairs %>% filter(category=="sane") %>% inner_join(estc_raw_sane,by=c("Record_seq"=="record_seq"))

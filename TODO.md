@@ -1,5 +1,7 @@
 # TODO
 
+Streamline and verify that raw data prepicker works as expected
+
 The data still has some 1to sizes although they should be interpreted as 2fo?
 
 TT notes in [estc_dimensions_observations.docx](estc_dimensions_observations.docx)

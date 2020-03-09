@@ -71,26 +71,26 @@ R.Version()
 ## [1] "3"
 ## 
 ## $minor
-## [1] "6.1"
+## [1] "6.2"
 ## 
 ## $year
 ## [1] "2019"
 ## 
 ## $month
-## [1] "07"
+## [1] "12"
 ## 
 ## $day
-## [1] "05"
+## [1] "12"
 ## 
 ## $`svn rev`
-## [1] "76782"
+## [1] "77560"
 ## 
 ## $language
 ## [1] "R"
 ## 
 ## $version.string
-## [1] "R version 3.6.1 (2019-07-05)"
+## [1] "R version 3.6.2 (2019-12-12)"
 ## 
 ## $nickname
-## [1] "Action of the Toes"
+## [1] "Dark and Stormy Night"
 ```
