@@ -1,10 +1,14 @@
 # TODO
 
-Streamline and verify that raw data prepicker works as expected
+TT notes in [estc_dimensions_observations.docx](estc_dimensions_observations.docx)
+-> OK, paitsi viimeinen pointti jonka katson erikseen. Näytä kommentoitu docx Tuulille.
 
 The data still has some 1to sizes although they should be interpreted as 2fo?
+-> Onko nämä nyt OK? Jos ei, niin löytyykö esimerkki jossa tulkinta on virheellinen?
 
-TT notes in [estc_dimensions_observations.docx](estc_dimensions_observations.docx)
+
+Lukuisa joukko merkintöjä jotka kyllä pitäisi tunnistua:
+sort(table(df.orig$value[which(is.na(df.preprocessed$gatherings.original))]))
 
 TT notes2 in [estc_physical_dimensions_incomplete_TT.xlsx](estc_physical_dimensions_incomplete_TT.xlsx)
 
