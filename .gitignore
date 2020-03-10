@@ -1,13 +1,12 @@
-<<<<<<< HEAD
 pick_300a*
 estc-data-*
 estc-raw-*
 *.Rds
 fields_picked_300c.csv
 *~
-||||||| merged common ancestors
-=======
 estc-data-private
 *~
 tmp*
->>>>>>> db0c3baa4019ea61349364f2c79992d34de8d74e
+estc
+bibliographica
+

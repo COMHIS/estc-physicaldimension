@@ -35,12 +35,20 @@ names(df.orig) <- gsub("300c", "value", names(df.orig))
 ids <- read.csv("estc-data-verified/estc-csv-raw-filtered/record_seq_estc_id_pairs.csv", header = TRUE)
 ids <- subset(ids, category == "sane") %>% unique()
 df.orig <- subset(df.orig, Record_seq %in% ids$record_seq)
-# record_id_curives_pairs %>% filter(category=="sane") %>% inner_join(estc_raw_sane,by=c("Record_seq"=="record_seq"))
+# Store a record of all original values
+original.values <- df.orig$value
+
+# Discard entries that have been curated and confirmed to contain no dimension information
+tab <- read.table("rejected_entries_curated.csv", sep = "\t", header = TRUE)
+rejected.entries <- as.character(tab$value)
+df.orig$value[df.orig$value %in% rejected.entries] <- NA
 
 # There are a few cases where a document has multiple dimension entries
+# For instance:
 # subset(df.orig, system_control_number %in% n)
 # 72701       (CU-RivES)P2224                     12⁰.
 # 72701       (CU-RivES)P2224              11 x 15 cm.
+
 # Combine these manually by semicolon
 n <- df.orig$system_control_number[which(duplicated(df.orig$system_control_number))]
 s <- subset(df.orig, system_control_number %in% n)
