@@ -1,5 +1,16 @@
 # TODO
 
+http://estc.bl.uk/P5483, http://estc.bl.uk/P5631, http://estc.bl.uk/P5427, http://estc.bl.uk/P5413
+Luulen selvittäneeni "xx-yy cm"-arvoituksen. Kuten linkkien takaa näkyy, ainakin nämä neljä, ja luulisin siis että muutkin, ovat monen volyymin tapauksia (sidottuja lehtiä):
+2 v. ; 40-49 cm.
+2 v. : ill. (chiefly adv.) ; 49-53 cm.
+v. ; 38-42 cm.
+138 v. ; 23-31 cm.
+Jos monivolyymiset ovat joka tapauksessa vielä pohdinnan alla, niin nämä jätettäneen siihen kategoriaan?
+(Ainakin tässä kohtaa tulkintaa vaikeutti se, että kentältä puuttuu konteksti - mitat = pelkkä 300c kun 300a olisi kertonut volyymitiedon.)
+hyvä, selvä juttu. Nuo monivoluumiset ovat osoittautuneet monella tapaa hankaliksi aikaisemmin. Ja ilman muuta kannattaa jättää siihen kategoriaan.
+
+
 test gatherings kaatuu
 
 TT notes2 in [estc_physical_dimensions_incomplete_TT.xlsx](estc_physical_dimensions_incomplete_TT.xlsx)
