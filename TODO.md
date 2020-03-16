@@ -1,5 +1,7 @@
 # TODO
 
+test gatherings kaatuu
+
 TT notes2 in [estc_physical_dimensions_incomplete_TT.xlsx](estc_physical_dimensions_incomplete_TT.xlsx)
 -> Lukuisa joukko merkintöjä jotka kyllä pitäisi tunnistua:
    -> sort(table(df.orig$value[which(is.na(df.preprocessed$gatherings.original))]))
