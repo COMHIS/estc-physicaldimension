@@ -65,32 +65,32 @@ R.Version()
 ## [1] "x86_64, linux-gnu"
 ## 
 ## $status
-## [1] ""
+## [1] "Patched"
 ## 
 ## $major
 ## [1] "3"
 ## 
 ## $minor
-## [1] "6.2"
+## [1] "6.3"
 ## 
 ## $year
-## [1] "2019"
+## [1] "2020"
 ## 
 ## $month
-## [1] "12"
+## [1] "03"
 ## 
 ## $day
-## [1] "12"
+## [1] "11"
 ## 
 ## $`svn rev`
-## [1] "77560"
+## [1] "78037"
 ## 
 ## $language
 ## [1] "R"
 ## 
 ## $version.string
-## [1] "R version 3.6.2 (2019-12-12)"
+## [1] "R version 3.6.3 Patched (2020-03-11 r78037)"
 ## 
 ## $nickname
-## [1] "Dark and Stormy Night"
+## [1] "Holding the Windsock"
 ```

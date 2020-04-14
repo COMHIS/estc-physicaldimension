@@ -39,7 +39,7 @@ df.orig <- subset(df.orig, Record_seq %in% ids$record_seq)
 original.values <- df.orig$value
 
 # Discard entries that have been curated and confirmed to contain no dimension information
-tab <- read.table("rejected_entries_curated.csv", sep = "\t", header = TRUE)
+tab <- read.csv("rejected_entries_curated.csv", sep = "\t", header = TRUE)
 rejected.entries <- as.character(tab$value)
 df.orig$value[df.orig$value %in% rejected.entries] <- NA
 
