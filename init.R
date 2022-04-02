@@ -1,6 +1,6 @@
 library(devtools)
-load_all("~/Rpackages/bibliographica")
-load_all("~/Rpackages/estc")
+load_all("bibliographica")
+load_all("estc")
 
 library(ggplot2)
 library(devtools)
@@ -10,7 +10,7 @@ library(stringr)
 library(bibliographica)
 library(estc)
 library(magrittr)
-library(sorvi)
+#library(sorvi)
 library(reshape2)
 library(gridExtra)
 library(knitr)
@@ -29,17 +29,26 @@ polished_csv <- paste0(global_outpath, field, ".csv")
 
 # Load initial CSVs (time consuming, hence load Rds instead, if available)
 df.orig <- read_parsed_fields(parsed_csv, field = 300, subfield = "c")
+names(df.orig) <- gsub("300c", "value", names(df.orig))
 
 # Only pick the sane entries
-ids <- read.csv("estc-data-verified/estc-csv-raw-filtered/record_id_curives_pairs.csv", header = TRUE)
+ids <- read.csv("estc-data-verified/estc-csv-raw-filtered/record_seq_estc_id_pairs.csv", header = TRUE)
 ids <- subset(ids, category == "sane") %>% unique()
 df.orig <- subset(df.orig, Record_seq %in% ids$record_seq)
-# record_id_curives_pairs %>% filter(category=="sane") %>% inner_join(estc_raw_sane,by=c("Record_seq"=="record_seq"))
+# Store a record of all original values
+original.values <- df.orig$value
+
+# Discard entries that have been curated and confirmed to contain no dimension information
+tab <- read.csv("rejected_entries_curated.csv", sep = "\t", header = TRUE)
+rejected.entries <- as.character(tab$value)
+df.orig$value[df.orig$value %in% rejected.entries] <- NA
 
 # There are a few cases where a document has multiple dimension entries
+# For instance:
 # subset(df.orig, system_control_number %in% n)
 # 72701       (CU-RivES)P2224                     12⁰.
 # 72701       (CU-RivES)P2224              11 x 15 cm.
+
 # Combine these manually by semicolon
 n <- df.orig$system_control_number[which(duplicated(df.orig$system_control_number))]
 s <- subset(df.orig, system_control_number %in% n)

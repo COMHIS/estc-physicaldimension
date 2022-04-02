@@ -1,7 +1,7 @@
 ---
 title: "Document dimension preprocessing summary"
 author: "Helsinki Computational History Group (COMHIS)"
-date: "2018-11-16"
+date: "2020-04-14"
 output: markdown_document
 ---
 
@@ -9,23 +9,22 @@ output: markdown_document
 
 ## Document size comparisons
 
-  * Some dimension info is provided in the original raw data for altogether 382181 documents (99.5%) but could not be interpreted for 8954 documents (ie. dimension info was successfully estimated for 97.7 % of the documents where this field was not empty).
+  * Some dimension info is provided in the original raw data for altogether 471076 documents (97.9%) but could not be interpreted for 6003 documents (ie. dimension info was successfully estimated for 98.7 % of the documents where this field was not empty).
 
-  * Document size (area) info was obtained in the final preprocessed data for altogether 375942 documents (98%). For the remaining documents, critical dimension information was not available or could not be interpreted: [List of entries where document surface could not be estimated](physical_dimension_incomplete.csv)
+  * Document size (area) info was obtained in the final preprocessed data for altogether 466698 documents (97%). For the remaining documents, critical dimension information was not available or could not be interpreted: [List of entries where document surface area could not be estimated](output.tables/physical_dimension_incomplete.csv)
 
-  * Document gatherings info is originally available for 369704 documents (96%), and further estimated up to 373227 documents (97%) in the final preprocessed data.
+  * Document gatherings info is originally available for 464163 documents (96%), and further estimated up to 465073 documents (97%) in the final preprocessed data.
 
-  * Document height info is originally available for 8034 documents (2%), and further estimated up to 375942 documents (98%) in the final preprocessed data.
+  * Document height info is originally available for 4649 documents (1%), and further estimated up to 466698 documents (97%) in the final preprocessed data.
 
-  * Document width info is originally available for 3762 documents (1%), and further estimated up to 375942 documents (98%) in the final preprocessed data.
+  * Document width info is originally available for 0 documents (0%), and further estimated up to 466698 documents (97%) in the final preprocessed data.
 
 
 These tables can be used to verify the accuracy of the conversions from the raw data to final estimates:
 
-  * [Dimension conversions from raw data to final estimates](conversions_physical_dimension.csv)
+  * [Dimension conversions from raw data to final estimates](output.tables/conversions_physical_dimension.csv)
 
   * [Automated tests for dimension conversions](https://github.com/COMHIS/bibliographica/blob/master/inst/extdata/tests_dimension_polish.csv)
-
 
 
 The estimated dimensions are based on the following auxiliary information sheets:
@@ -36,8 +35,10 @@ The estimated dimensions are based on the following auxiliary information sheets
 
   * [Document dimension estimates](https://github.com/COMHIS/bibliographica/blob/master/inst/extdata/documentdimensions.csv) (used when information is partially missing)
 
+  * [Discarded entries (curated)](rejected_entries_curated.csv); these entries have been curated, and confirmed to contain no interpretable dimension information. These are discarded before other processing.
 
-<!--[Discarded dimension info](dimensions_discarded.csv)-->
+  * [Discarded entries (non-curated)](rejected_entries_noncurated.csv); these entries have not been curated, and they could not be interpreted for dimension information. 
+
 
 Left: final gatherings vs. final document dimension (width x height). Right: original gatherings versus original heights where both are available. The point size indicates the number of documents for each case. The red dots indicate the estimated height that is used when only gathering information is available. 
 
@@ -63,7 +64,7 @@ nmin` documents at every decade are excluded:
 
 
 ```
-## Error in `$<-.data.frame`(`*tmp*`, publication_time, value = numeric(0)): replacement has 0 rows, data has 373227
+## Error in `$<-.data.frame`(`*tmp*`, publication_time, value = numeric(0)): replacement has 0 rows, data has 465073
 ```
 
 ```
@@ -71,7 +72,7 @@ nmin` documents at every decade are excluded:
 ```
 
 ```
-## Error in `$<-.data.frame`(`*tmp*`, "publication_time", value = numeric(0)): replacement has 0 rows, data has 373227
+## Error in `$<-.data.frame`(`*tmp*`, "publication_time", value = numeric(0)): replacement has 0 rows, data has 465073
 ```
 
 ```
@@ -85,11 +86,13 @@ Here we use the original data only:
 
 
 ```
-## Error in .f(.x[[i]], ...): object 'publication_decade' not found
+## Error: Can't subset columns that don't exist.
+## [31m✖[39m The column `publication_decade` doesn't exist.
 ```
 
 ```
-## Error in grouped_df_impl(data, unname(vars), drop): Column `publication_decade` is unknown
+## Error: Must group by variables found in `.data`
+## * Column `publication_decade` is not found
 ```
 
 ```
@@ -106,10 +109,12 @@ Only the most frequently occurring gatherings are listed here:
 
 |gatherings.original | mean.width| median.width| mean.height| median.height|   n|
 |:-------------------|----------:|------------:|-----------:|-------------:|---:|
-|1to                 |      28.81|        28.81|       41.17|         41.17|  18|
-|2fo                 |      20.28|        20.28|       37.51|         37.51| 598|
-|4to                 |      18.43|        18.43|       21.31|         21.31| 427|
-|8vo                 |      16.50|        16.50|       19.51|         19.51| 633|
-|12mo                |      11.50|        11.50|       15.69|         15.69| 104|
+|1to                 |        NaN|          NaN|       43.50|         43.50|  12|
+|2fo                 |        NaN|          NaN|       37.11|         37.11| 772|
+|4to                 |        NaN|          NaN|       21.69|         21.69| 510|
+|8vo                 |        NaN|          NaN|       19.25|         19.25| 677|
+|12mo                |        NaN|          NaN|       15.58|         15.58| 107|
+|16mo                |        NaN|          NaN|       10.95|         10.95|  22|
+|18mo                |        NaN|          NaN|       14.67|         14.67|   3|
 
 -->
