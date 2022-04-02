@@ -7,10 +7,9 @@ Helsinki Computational History Group
 
 ## Output
 
-The workflow provides code for processing the physical dimension
+The workflow provides code and outcomes for processing the physical dimension
 (gatherings / book formats) information found in the English Short
-Title Catalogue (ESTC) and outputs unified and unique data for the
-ESTC documents.
+Title Catalogue (ESTC).
 
  - [Automated summaries](physical_dimension.md): overview of harmonization and links to supporting data
  - [Output data tables](https://github.com/COMHIS/estc-data-unified/tree/master/estc-physicaldimension).
