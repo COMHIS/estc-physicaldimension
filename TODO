@@ -1,5 +1,27 @@
 # TODO
 
-In order to save space, make table with unique entries that can be cross-linked to documents.
+7.12.2021
 
-Now some empty lines are omitted. Fix this too. Perhaps solved with the interlinking already.
+- siellä oli vielä turhaan hylättyjä entryjä
+- kenttänimien erottimen yhdistely ("_" nyt on piste)
+- Tab-separated files + .tsv ending
+- system_control_number -> estc_id control_number kuten muihin
+  kenttiin sovittuna; ilman CU-Rives etulittettä
+- sama kommentti muuten kielikentille näistä
+- NA-käsittelyt? Merkkaa tyhjiksi sen sijasta kaikkiin kenttiin.
+- 300a vai 300c kenttä MARCista?
+- Parannus: vuosi- tai paikkakohtaiset keskiarvot (1700-luvun gatheringsejä nyt)
+- Miksei siivotuissa kentissä näy kaikkia dimensiotietoja (gatherings,
+  w, h) vaikka ne on originaalidatassa
+- Jos vertaisi STCN dimensiontietoihin?
+- ECCOn erikoisdatat erikoissivuista/dimensiot/sivumäärätiedot hyödynnys?
+- Leveystietoa ei juuri saatavissa milleekään dokkareille; onko
+  mahdollista että korkeustiedon kanssa sekaisin joissain tapauksissa?
+  -> kuinka monille löytyy tiedot sekä gatheringeistä että w/h tiedoista
+  -> tämä paremmin selkeemmin summaryyn
+- In order to save space, make table with unique entries that can be
+  cross-linked to documents.
+- Now some empty lines are omitted. Fix this too. Perhaps solved with
+  the interlinking already.
+- monista tässä tehty työ STCN:ään
+- READMEhen joku TODO lista potentiaalisista jatkokehitysstepeistä
